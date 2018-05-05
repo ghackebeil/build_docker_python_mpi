@@ -7,10 +7,10 @@ CMD ["/bin/bash"]
 
 """
 
-installs = ['install_scripts/libs.sh',
-            'install_scripts/glpk.sh',
-            'install_scripts/ipopt.sh']
-python_installs = ['install_scripts/python_libs.sh']
+root_installs = ['install_scripts/libs.sh',
+                 'install_scripts/python_libs.sh']
+user_installs = ['install_scripts/glpk.sh',
+                 'install_scripts/ipopt.sh']
 
 def create_dockerfile(source_image,
                       python_exe,
@@ -25,20 +25,20 @@ def create_dockerfile(source_image,
         out += ('RUN ln -s "$(which {python_exe})" '
                 '/usr/local/bin/python\n'.\
                 format(python_exe=python_exe))
-    # destination for downloaded source code
-    out += ('ARG PREFIX=/root\n')
     if openmpi:
         out += ('ARG MPILIBS="openmpi-bin openmpi-common libopenmpi-dev"\n')
     else:
         assert mpich
         out += ('ARG MPILIBS="libmpich-dev mpich mpich-doc"\n')
-    # where to place environment variables that had to be
-    # determined at runtime (they will be added after the
-    # initial build)
-    for fname in installs:
+    for fname in root_installs:
         with open(fname) as f:
             out += f.read()
-    for fname in python_installs:
+    out += ("RUN useradd -ms /bin/bash user\n")
+    out += ('USER user\n')
+    out += ('WORKDIR /home/user\n')
+    # destination for downloaded source code
+    out += ('ARG PREFIX=/home/user\n')
+    for fname in user_installs:
         with open(fname) as f:
             out += f.read()
     if not os.path.exists(dirname):
