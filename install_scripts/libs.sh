@@ -15,5 +15,5 @@ RUN apt-get -q update && \
         libopenblas-dev \
         ${MPILIBS} \
         enchant \
-        unixodbc unixodbc-dev && \
+        libunwind-dev && \
     rm -rf /var/lib/apt/lists/*
