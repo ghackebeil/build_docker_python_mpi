@@ -33,9 +33,6 @@ def create_dockerfile(source_image,
     for fname in root_installs:
         with open(fname) as f:
             out += f.read()
-    out += ("RUN useradd -ms /bin/bash user\n")
-    out += ('USER user\n')
-    out += ('WORKDIR /home/user\n')
     # destination for downloaded source code
     out += ('ARG PREFIX=/home/user\n')
     for fname in user_installs:
