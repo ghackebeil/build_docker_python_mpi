@@ -22,7 +22,7 @@ RUN cd /root && \
     cd .. && \
     mkdir build && \
     cd build && \
-    ../configure --prefix=/usr/local CXX=g++ CC=gcc F77=gfortran > /dev/null && \
+    ../configure --enable-static --disable-shared --prefix=/usr/local CXX=g++ CC=gcc F77=gfortran > /dev/null && \
     make -j$(nproc) > /dev/null && \
     make install > /dev/null && \
     cd ../../ && \
