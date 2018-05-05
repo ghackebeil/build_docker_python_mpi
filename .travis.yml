@@ -8,18 +8,18 @@ env:
     - secure: 1PL18Hn7GvEsC2Xy6fcqjFM//NY2gNa2wV+gcR65HhHyc+s2wvtVKf1tmJDRI1Cg2t+wVvxtdWw5HlQ/EPvBGcmP9ZKt+xZwCAuI2YWCeNQU6r+xPLXngKUz54yUMu3ZhUkrHRhlqV2TXJA59Fy4G+9wwCks2Li3IRwbZCKl24hA98PF/1xQ/PyyFFbxvXZ8V5h+FXazobZNTA5n+uljMUqtQYp5jpitT79mx3z0F3pQtKWZYl41r6/gxpOmfBhEPMw98X/5NgwvQHIyC+JxnonLfdiyNAd0EnbUUus6b0BFaIFFjXM2hpVAVGrt9jAmH/dWLBzhjrgbaV0ZzgZRv1apIjxR2evwsj2Lcne4S3e3qTHuMK4pDPPbC8EQRrMy02kfH8g1C+HaRQI6qWiOn3ELCfXXV6UHyFnfkDKgJGMR+G3l/SxccCrb6+w2AXSlSNMnU/buKeufDXWMShEaYCsOtHqt4kglEzd9pa6DIHRSgaBbVbGmY9eDxA7UXe8zN2nGU5SQxFGkPo1tdNlJwMZG3PgtHipoSsCmBJ3dvLx+HC2y1s1zsX5wdEGALIddtceuH9vkk5nYnvHLT5SxAdexrRjcvy+tr8cYhtokyUwPewKrVEoKkyLSMx5y2RamoDyCOTlNEFmUf9t4LACmblOc/oPV4SyyivWTmdwWORk=
     - secure: l5wfqq2Vd8KkD/OGOE4o+xYEpKTz6KonvxyuvUiMwhBWK4dppJXEkACnjz5MGt5FiYNlGSiZy0OWsyL/acXuFTvFe7SShv+rrmgeBp/GQRKspbA140hzCtY2bX8CRPn6Z20Wv1CS8F0zOGsMY61GP9QDSWR9ITI639aBbK/wnoSyhkoYcLkSLDpLcTCw+sbK3tYkdrqy2UHBj6Y8U+owR+SrS8/0F9SePAh4txEI2RKyyzRSe+7Ihf1/v9bnicE2Ja1ueY5vUEjcfBy5rAiSrD9XnoKexFNFMZFVzm1UCsfBwDsrWoJCTEDtlGy1DrzhS8Wo0Tr0GD2JvhnTncZMPsJOE/0PEa9H08er7x68vYCXY2TrSNkKCGp6LXknm5fufJDMv94qxHVxHbbu9Hh8UCeVdT8ZAH9rkPqb0I+D38ILGwiJVh3+eIUKHVjtmgnXRe7zuMiSFQBkb8HgpGLKR9urtKAwr+qqQlslooqX4jMVTHmJaLt0tqm2aC5Nzy/j5RsTOvjyWhF956j3NpZhHwbE0bmgTTSwpUmhAnDSU9cvVBmYhuS4Dk0Fgqdtm4hC6Xq6cz6hMUGXCTb8Ilppc/bWTnLawQ/JzhzTUfTuDkoewgpzidd4LIAO/ZZSohNLZpwfmABPNFPB5en4+7pe4hy987oHmS503fTzW0vC05w=
   matrix:
-    - BASENAME=python_3.7-rc SRC_IMAGE=python:3.7-rc-stretch SRC_PYTHON_EXE=python ${MPINAME}=openmpi
-    - BASENAME=python_3.6    SRC_IMAGE=python:3.6-stretch    SRC_PYTHON_EXE=python ${MPINAME}=openmpi
-    - BASENAME=python_3.5    SRC_IMAGE=python:3.5            SRC_PYTHON_EXE=python ${MPINAME}=openmpi
-    - BASENAME=python_2.7    SRC_IMAGE=python:2.7-stretch    SRC_PYTHON_EXE=python ${MPINAME}=openmpi
-    - BASENAME=pypy_3        SRC_IMAGE=pypy:3                SRC_PYTHON_EXE=pypy3  ${MPINAME}=openmpi
-    - BASENAME=pypy_2        SRC_IMAGE=pypy:2                SRC_PYTHON_EXE=pypy   ${MPINAME}=openmpi
-    - BASENAME=python_3.7-rc SRC_IMAGE=python:3.7-rc-stretch SRC_PYTHON_EXE=python ${MPINAME}=mpich
-    - BASENAME=python_3.6    SRC_IMAGE=python:3.6-stretch    SRC_PYTHON_EXE=python ${MPINAME}=mpich
-    - BASENAME=python_3.5    SRC_IMAGE=python:3.5            SRC_PYTHON_EXE=python ${MPINAME}=mpich
-    - BASENAME=python_2.7    SRC_IMAGE=python:2.7-stretch    SRC_PYTHON_EXE=python ${MPINAME}=mpich
-    - BASENAME=pypy_3        SRC_IMAGE=pypy:3                SRC_PYTHON_EXE=pypy3  ${MPINAME}=mpich
-    - BASENAME=pypy_2        SRC_IMAGE=pypy:2                SRC_PYTHON_EXE=pypy   ${MPINAME}=mpich
+    - BASENAME=python_3.7-rc SRC_IMAGE=python:3.7-rc-stretch SRC_PYTHON_EXE=python MPINAME=openmpi
+    - BASENAME=python_3.6    SRC_IMAGE=python:3.6-stretch    SRC_PYTHON_EXE=python MPINAME=openmpi
+    - BASENAME=python_3.5    SRC_IMAGE=python:3.5            SRC_PYTHON_EXE=python MPINAME=openmpi
+    - BASENAME=python_2.7    SRC_IMAGE=python:2.7-stretch    SRC_PYTHON_EXE=python MPINAME=openmpi
+    - BASENAME=pypy_3        SRC_IMAGE=pypy:3                SRC_PYTHON_EXE=pypy3  MPINAME=openmpi
+    - BASENAME=pypy_2        SRC_IMAGE=pypy:2                SRC_PYTHON_EXE=pypy   MPINAME=openmpi
+    - BASENAME=python_3.7-rc SRC_IMAGE=python:3.7-rc-stretch SRC_PYTHON_EXE=python MPINAME=mpich
+    - BASENAME=python_3.6    SRC_IMAGE=python:3.6-stretch    SRC_PYTHON_EXE=python MPINAME=mpich
+    - BASENAME=python_3.5    SRC_IMAGE=python:3.5            SRC_PYTHON_EXE=python MPINAME=mpich
+    - BASENAME=python_2.7    SRC_IMAGE=python:2.7-stretch    SRC_PYTHON_EXE=python MPINAME=mpich
+    - BASENAME=pypy_3        SRC_IMAGE=pypy:3                SRC_PYTHON_EXE=pypy3  MPINAME=mpich
+    - BASENAME=pypy_2        SRC_IMAGE=pypy:2                SRC_PYTHON_EXE=pypy   MPINAME=mpich
 script:
   - echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
   - mkdir ${BUILD_DIR}
