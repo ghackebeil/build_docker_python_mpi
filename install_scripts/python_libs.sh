@@ -24,7 +24,9 @@ RUN pip install --no-cache-dir -U \
       networkx \
       dill \
       vmprof
-# These may fail on PyPy / Python 3.7-rc
-RUN pip install --no-cache-dir PyYAML || echo failed to install PyYAML
+# These may fail on PyPy / Python 3.7
+RUN pip install --no-cache-dir PyYAML || \
+    pip install https://github.com/yaml/pyyaml/archive/4.1.zip || \
+    echo failed to install PyYAML
 RUN pip install --no-cache-dir numba || echo failed to install numba
 RUN pip install --no-cache-dir pandas || echo failed to install pandas
