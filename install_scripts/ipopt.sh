@@ -6,7 +6,7 @@ RUN echo "" && \
     echo "INSTALLING IPOPT" && \
     echo "================" && \
     echo ""
-ENV IPOPT_VERSION="3.12.9"
+ENV IPOPT_VERSION="3.12.12"
 ARG TARGET="Ipopt-${IPOPT_VERSION}"
 RUN cd /root && \
     rm -rf ${TARGET}.tgz && \
