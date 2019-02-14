@@ -6,13 +6,12 @@ RUN echo "" && \
     echo "INSTALLING PYTHON LIBS" && \
     echo "======================" && \
     echo ""
-RUN pip install --no-cache-dir -U \
-      pip \
-      setuptools && \
+RUN pip install --no-cache-dir -U pip && \
+    pip install --no-cache-dir -U setuptools && \
+    pip install --no-cache-dir -U wheel && \
     pip install --no-cache-dir \
       sphinx \
       sphinx_rtd_theme \
-      wheel \
       virtualenv \
       cffi \
       numpy \
@@ -20,8 +19,7 @@ RUN pip install --no-cache-dir -U \
       cryptography \
       sympy \
       networkx \
-      dill \
-      vmprof
+      dill
 # These may fail on PyPy / Python 3.7
 RUN pip install --no-cache-dir PyYAML || \
     pip install https://github.com/yaml/pyyaml/archive/4.1.zip || \
