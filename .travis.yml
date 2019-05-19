@@ -12,8 +12,8 @@ env:
     - BASENAME=python_3.8_rc SRC_IMAGE=python:3.8-rc-stretch SRC_PYTHON_EXE=python MPINAME=mpich
     - BASENAME=python_3.7    SRC_IMAGE=python:3.7-stretch    SRC_PYTHON_EXE=python MPINAME=openmpi
     - BASENAME=python_3.7    SRC_IMAGE=python:3.7-stretch    SRC_PYTHON_EXE=python MPINAME=mpich
-    - BASENAME=pypy_3        SRC_IMAGE=pypy:3                SRC_PYTHON_EXE=pypy3  MPINAME=openmpi
-    - BASENAME=pypy_3        SRC_IMAGE=pypy:3                SRC_PYTHON_EXE=pypy3  MPINAME=mpich
+    - BASENAME=pypy_3        SRC_IMAGE=pypy:3.6              SRC_PYTHON_EXE=pypy3  MPINAME=openmpi
+    - BASENAME=pypy_3        SRC_IMAGE=pypy:3.6              SRC_PYTHON_EXE=pypy3  MPINAME=mpich
     - BASENAME=pypy_2        SRC_IMAGE=pypy:2                SRC_PYTHON_EXE=pypy   MPINAME=openmpi
     - BASENAME=pypy_2        SRC_IMAGE=pypy:2                SRC_PYTHON_EXE=pypy   MPINAME=mpich
     - BASENAME=python_3.6    SRC_IMAGE=python:3.6-stretch    SRC_PYTHON_EXE=python MPINAME=openmpi
